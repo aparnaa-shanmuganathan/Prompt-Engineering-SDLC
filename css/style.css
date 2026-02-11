@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+/* BODY */
+body {
+  background-color: #f8fafc;
+  color: #111827;
+}
+
+/* NAVBAR */
+.navbar {
+  height: 60px;
+  background-color: #0f172a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 36px;
+  height: 36px;
+}
+
+.site-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav-right a {
+  color: #e5e7eb;
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 500;
+}
+
+.nav-right a.active,
+.nav-right a:hover {
+  color: #2563eb;
+}
+
+/* LAYOUT */
+.layout {
+  display: flex;
+  min-height: calc(100vh - 120px);
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background-color: #e5e7eb;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+/* MAIN CONTENT */
+.content {
+  flex: 1;
+  padding: 32px;
+  background-color: white;
+}
+
+.content h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+/* OVERVIEW SECTION */
+.overview-section {
+  margin-bottom: 32px;
+}
+
+.overview-section h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.overview-intro {
+  font-size: 16px;
+  color: #475569;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stage-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
+}
+
+.stage-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.stage-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.stage-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.stage-card[data-stage="Requirements"] {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stage-card[data-stage="Feasibility"] {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.stage-card[data-stage="Design"] {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.stage-card[data-stage="Implementation"] {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.stage-card[data-stage="Testing"] {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.stage-card[data-stage="Deployment"] {
+  background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+}
+
+.stage-card[data-stage="Maintenance"] {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+/* STAGE SECTION */
+.stage-section h2 {
+  margin-top: 24px;
+  font-size: 22px;
+}
+
+/* PROMPT BOX */
+.prompt-box {
+  background-color: #f1f5f9;
+  border-left: 4px solid #2563eb;
+  padding: 16px;
+  margin-top: 12px;
+  border-radius: 6px;
+}
+
+.prompt-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.prompt-box pre {
+  font-family: monospace;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #0f172a;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 14px;
+  font-size: 14px;
+}
