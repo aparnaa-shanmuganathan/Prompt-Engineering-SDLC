@@ -1,0 +1,50 @@
+document.addEventListener("DOMContentLoaded", function () {
+
+  console.log("JS loaded");
+
+  const sidebarItems = document.querySelectorAll(".sidebar li");
+  const contentArea = document.querySelector(".content");
+
+  console.log("Sidebar items:", sidebarItems.length);
+
+  function renderStage(stage) {
+    console.log("Rendering stage:", stage);
+
+    const data = window.SDLC_PROMPTS[stage];
+
+    if (!data) {
+      contentArea.innerHTML = `<p>Stage data not found.</p>`;
+      return;
+    }
+
+    contentArea.innerHTML = `
+      <h1>${data.title}</h1>
+      <p>${data.description}</p>
+
+      <h2>Prompt Templates</h2>
+      ${data.prompts.map(p => `
+        <div class="prompt-box">
+          <pre>${p}</pre>
+        </div>
+      `).join("")}
+
+      <h2>Best Practices</h2>
+      <ul>
+        ${data.bestPractices.map(bp => `<li>${bp}</li>`).join("")}
+      </ul>
+    `;
+  }
+
+  sidebarItems.forEach(item => {
+    item.addEventListener("click", function () {
+      sidebarItems.forEach(i => i.classList.remove("active"));
+      this.classList.add("active");
+
+      const stage = this.getAttribute("data-stage");
+      renderStage(stage);
+    });
+  });
+
+  // Initial load
+  renderStage("Requirements");
+});
